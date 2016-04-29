@@ -29,9 +29,6 @@ RUN git clone https://github.com/galaxyproject/galaxy/
 COPY galaxy/galaxy.ini.sample $GALAXY_FOLDER/config/galaxy.ini.sample
 
 WORKDIR $GALAXY_FOLDER
-RUN git checkout -b master origin/master
-
-WORKDIR $GALAXY_FOLDER
 
 EXPOSE 8080
 
