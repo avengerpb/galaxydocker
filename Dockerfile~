@@ -25,7 +25,11 @@ WORKDIR $HOME
 #Clone and install galaxy
 RUN git clone https://github.com/galaxyproject/galaxy/
 
+
 COPY galaxy/galaxy.ini $GALAXY_FOLDER/config/galaxy.ini
+
+WORKDIR $GALAXY_FOLDER
+RUN git checkout -b master origin/master
 
 WORKDIR $GALAXY_FOLDER
 
