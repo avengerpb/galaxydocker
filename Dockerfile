@@ -30,9 +30,10 @@ COPY galaxy/galaxy.ini.sample $GALAXY_FOLDER/config/galaxy.ini.sample
 
 WORKDIR $GALAXY_FOLDER
 
+RUN run.sh --daemon
+
 EXPOSE 8080
 
-#RUN
-WORKDIR /usr/local/galaxy
-CMD ["./run.sh"]
+ENTRYPOINT ["run.sh"]
+
 
